@@ -1,0 +1,41 @@
+Task 3: Encapsulation
+
+<?php
+class Employee {
+    
+    private $name;
+    private $position;
+    private $salary;
+
+    // Constructor method for name and position
+    public function __construct($name, $position) {
+        $this->name = $name;
+        $this->position = $position;
+    }
+
+    // Getter method for name
+    public function getName() {
+        return $this->name;
+    }
+
+    // Getter method for position
+    public function getPosition() {
+        return $this->position;
+    }
+
+    // Setter method for salary with validation
+    public function setSalary($salary) {
+        if (is_numeric($salary) && $salary > 0) {
+            $this->salary = $salary;
+        } else {
+            throw new Exception("Salary must be a positive number.");
+        }
+    }
+
+    // Getter method for salary 
+    public function getSalary() {        
+        return $this->salary;
+    }
+}
+
+?>

@@ -1,0 +1,36 @@
+Task 4: Polymorphism
+
+<?php
+
+// class for Animal
+abstract class Animal {
+    // Method to be overridden by each animal
+    abstract public function makeSound();
+}
+
+// Sub class dog
+class Dog extends Animal {
+    public function makeSound() {
+        return "Woof!";
+    }
+}
+
+// Sub class cat
+class Cat extends Animal {
+    public function makeSound() {
+        return "Meow!";
+    }
+}
+
+// Sub class cow
+class Cow extends Animal {
+    public function makeSound() {
+        return "Moo!";
+    }
+}
+
+// Polymorphism
+function animalSound(Animal $animal) {
+    echo $animal->makeSound();
+}
+
